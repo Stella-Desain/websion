@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.zip
+__pycache__/
+.venv/
+node_modules/
+.env
+.env.*

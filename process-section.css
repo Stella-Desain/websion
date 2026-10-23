@@ -1,0 +1,53 @@
+#mulai.mu-sec { padding: 24px 12px; }
+#mulai .mu-frame { position: relative; overflow: hidden; border-radius: 40px; background: #f8f7f3; }
+.mu-background { position: absolute; inset: 0; display: block; pointer-events: none; }
+.mu-background img { position: absolute; bottom: 0; left: 0; display: block; width: 100%; height: auto; -webkit-mask-image: linear-gradient(transparent, #000 18%); mask-image: linear-gradient(transparent, #000 18%); }
+.mu-background .mu-video { position: absolute; bottom: 0; left: 0; display: block; width: 100%; height: auto; opacity: 0; pointer-events: none; -webkit-mask-image: linear-gradient(transparent, #000 18%); mask-image: linear-gradient(transparent, #000 18%); transition: opacity .6s ease; }
+#mulai [data-process-video-ready="true"] .mu-video { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  #mulai .mu-video { display: none; transition: none; }
+}
+#mulai .mu-content { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 76px 44px 144px; box-sizing: border-box; }
+.mu-heading { display: flex; flex-direction: column; align-items: center; text-align: center; }
+#mulai #proses-title { margin: 0; max-width: 17em; font-size: clamp(2.15rem, 4.2vw, 3.5rem); line-height: 1.1; font-weight: 600; letter-spacing: -.035em; color: #0d0f2b; text-wrap: balance; }
+#proses-title > span:last-child { color: #3d35e0; }
+.mu-heading > p { margin: 18px 0 0; max-width: 45em; font-size: 17px; line-height: 1.5; color: #505e71; text-wrap: pretty; }
+#mulai .mu-grid { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; align-items: stretch; list-style: none; margin: 42px 0 0; padding: 0; gap: 16px; }
+#mulai .mu-card { position: relative; display: flex; flex-direction: column; box-sizing: border-box; min-width: 0; padding: 18px 16px 20px; border: 6px solid #fff; border-radius: 24px; background: #f7f7f8; box-shadow: 0 12px 22px -22px #39326455; animation: ws-card-float 7s ease-in-out infinite; will-change: transform; }
+#mulai .mu-card-head { display: flex; align-items: flex-start; min-width: 0; }
+#mulai .mu-card-label { display: inline-flex; align-items: center; gap: 6px; min-width: 0; padding: 3px 8px 3px 3px; border: 1px solid #e4e2ec; border-radius: 99px; background: #fff; color: #5d617b; }
+#mulai .mu-card-label > span:last-child, #mulai .mu-card-week { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; line-height: 1.2; white-space: nowrap; }
+#mulai .mu-card-label > span:last-child { letter-spacing: .045em; }
+#mulai .mu-card-icon { display: grid; place-items: center; flex: none; width: 20px; height: 20px; border-radius: 50%; background: #6558eb; color: #fff; }
+#mulai .mu-card-icon svg { width: 12px; height: 12px; }
+#mulai .mu-card-week { align-self: flex-start; margin-top: auto; padding-top: 24px; color: #74758a; }
+#mulai .mu-card h3 { min-height: 2.5em; margin: 18px 0 10px; font-size: 18px; line-height: 1.25; font-weight: 600; letter-spacing: -.025em; color: #0d0f2b; text-wrap: pretty; overflow-wrap: break-word; }
+#mulai .mu-card p { margin: 0; font-size: 14px; line-height: 1.55; color: #586174; overflow-wrap: break-word; }
+#mulai .mu-c1 { animation-duration: 7.6s; animation-delay: -2.1s; }
+#mulai .mu-c2 { animation-duration: 6.8s; animation-delay: -3.8s; }
+#mulai .mu-c3 { animation-duration: 7.3s; animation-delay: -1.2s; }
+@keyframes ws-card-float { 0%, 100% { transform: translate3d(0, 4px, 0); } 50% { transform: translate3d(0, -5px, 0); } }
+@media (prefers-reduced-motion: reduce) { #mulai .mu-card { animation: none !important; transform: none; will-change: auto; } }
+@media (600px < width < 1024px) {
+  #mulai .mu-content { padding: 62px 20px 120px; }
+  #mulai .mu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 16px; margin-top: 34px; }
+  #mulai .mu-card { padding: 18px 16px 20px; border-width: 5px; border-radius: 20px; }
+  #mulai .mu-card-label { gap: 6px; }
+  #mulai .mu-card-label > span:last-child, #mulai .mu-card-week { font-size: 10px; }
+  #mulai .mu-card-icon { width: 18px; height: 18px; }
+  #mulai .mu-card-icon svg { width: 11px; height: 11px; }
+  #mulai .mu-card h3 { min-height: 2.6em; margin: 18px 0 10px; font-size: 18px; line-height: 1.3; }
+  #mulai .mu-card p { font-size: 15px; line-height: 1.55; }
+}
+@media (max-width: 600px) {
+  #mulai.mu-sec { padding: 18px 8px; }
+  #mulai .mu-frame { border-radius: 24px; }
+  #mulai .mu-content { padding: 52px 20px 120px; }
+  #mulai #proses-title { max-width: 14em; font-size: clamp(2rem, 8.4vw, 2.7rem); }
+  .mu-heading > p { margin-top: 16px; font-size: 15px; line-height: 1.5; }
+  #mulai .mu-grid { grid-template-columns: minmax(0, 1fr) !important; margin-top: 28px; gap: 12px; }
+  #mulai .mu-card { padding: 20px; border-radius: 24px; }
+  #mulai .mu-card h3 { min-height: 0; margin-top: 18px; font-size: 19px; }
+  #mulai .mu-card p { font-size: 14px; }
+  #mulai .mu-card-label > span:last-child, #mulai .mu-card-week { font-size: 10px; }
+}

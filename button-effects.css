@@ -1,0 +1,15 @@
+/* Reuse the package CTA's single, soft sweep without changing control geometry. */
+.ws-shine{position:relative;overflow:hidden}
+.fq-item>button.ws-shine{border-radius:inherit}
+.cw-step.ws-shine{border-radius:20px;overflow:visible}
+.ws-button-sheen{position:absolute;z-index:3;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none}
+.ws-button-sheen::after{content:"";position:absolute;inset:0 auto 0 0;width:60%;background:linear-gradient(105deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.42) 50%,rgba(255,255,255,0) 100%);transform:translateX(-140%);pointer-events:none}
+@media (hover:hover){.ws-shine:hover>.ws-button-sheen::after{animation:ws-button-sheen 1100ms cubic-bezier(.2,.7,.2,1) 1}}
+@keyframes ws-button-sheen{to{transform:translateX(260%)}}
+@media (max-width:700px){.cw-step.ws-shine{border-radius:16px}}
+@media (max-width:580px){.cw-step.ws-shine{border-radius:15px}}
+@media (prefers-reduced-motion:reduce){.ws-shine:hover>.ws-button-sheen::after{animation:none}}
+
+/* The individual translate leaves existing hero/footer transforms intact. */
+html[data-anchor-edge="top"] #top{translate:0 var(--anchor-nudge,0px)}
+html[data-anchor-edge="bottom"] .ws-footer{translate:0 var(--anchor-nudge,0px)}
